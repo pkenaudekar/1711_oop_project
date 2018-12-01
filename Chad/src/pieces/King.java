@@ -187,7 +187,6 @@ public class King extends Piece{
     				break;
 			}
 		}
-		
 		return false;
     }
 }

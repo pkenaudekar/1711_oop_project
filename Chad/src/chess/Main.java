@@ -15,7 +15,7 @@ import java.util.Iterator;
 import java.util.ListIterator;
 
 /**
- * This is the Main Class of our project.
+ * This is the Main Class of project.
  * All GUI Elements are declared, initialized and used in this class itself.
  * It is inherited from the JFrame Class of Java's Swing Library. 
  * 
@@ -89,7 +89,7 @@ public class Main extends JFrame implements MouseListener
 	//Setting up the board
 	Mainboard = new Main();
 	Mainboard.setVisible(true);	
-	Mainboard.setResizable(false);
+	Mainboard.setResizable(true);
 	}
 	
 	//Constructor
@@ -198,43 +198,41 @@ public class Main extends JFrame implements MouseListener
 			{	
 				P=null;
 				if(i==7&&j==2)
-					P=wr01;
-				else if(i==8&&j==2)
-					P=wr02;
-				else if(i==9&&j==2)
-					P=wr03;
-				else if(i==7&&j==3)
-					P=wr04;
-				else if(i==9&&j==3)
-					P=wr05;
-				else if(i==7&&j==4)
-					P=wr06;
-				else if(i==8&&j==4)
-					P=wr07;
-				else if(i==9&&j==4)
-					P=wr08;
-				
-				else if(i==2&&j==7)
 					P=br01;
-				else if(i==3&&j==7)
+				else if(i==8&&j==2)
 					P=br02;
-				else if(i==4&&j==7)
+				else if(i==9&&j==2)
 					P=br03;
-				else if(i==2&&j==8)
+				else if(i==7&&j==3)
 					P=br04;
-				else if(i==4&&j==8)
+				else if(i==9&&j==3)
 					P=br05;
-				else if(i==2&&j==9)
+				else if(i==7&&j==4)
 					P=br06;
-				else if(i==3&&j==9)
+				else if(i==8&&j==4)
 					P=br07;
-				else if(i==4&&j==9)
+				else if(i==9&&j==4)
 					P=br08;
-				
+				else if(i==2&&j==7)
+					P=wr01;
+				else if(i==3&&j==7)
+					P=wr02;
+				else if(i==4&&j==7)
+					P=wr03;
+				else if(i==2&&j==8)
+					P=wr04;
+				else if(i==4&&j==8)
+					P=wr05;
+				else if(i==2&&j==9)
+					P=wr06;
+				else if(i==3&&j==9)
+					P=wr07;
+				else if(i==4&&j==9)
+					P=wr08;
 				else if(i==8&&j==3)
-					P=wk;
-				else if(i==3&&j==8)
 					P=bk;
+				else if(i==3&&j==8)
+					P=wk;
 				cell=new Cell(i,j,P);
 				cell.addMouseListener(this);
 				board.add(cell);
@@ -250,14 +248,14 @@ public class Main extends JFrame implements MouseListener
 		start.setPreferredSize(new Dimension(120,40));
 		setTime.setFont(new Font("Arial",Font.BOLD,16));
 		label = new JLabel("Time Starts now", JLabel.CENTER);
-		  label.setFont(new Font("SERIF", Font.BOLD, 30));
-	      displayTime=new JPanel(new FlowLayout());
-	      time=new JPanel(new GridLayout(3,3));
-	      time.add(setTime);
-	      time.add(showPlayer);
-	      displayTime.add(start);
-	      time.add(displayTime);
-	      controlPanel.add(time);
+		label.setFont(new Font("SERIF", Font.BOLD, 30));
+	    displayTime=new JPanel(new FlowLayout());
+	    time=new JPanel(new GridLayout(3,3));
+	    time.add(setTime);
+	    time.add(showPlayer);
+	    displayTime.add(start);
+	    time.add(displayTime);
+	    controlPanel.add(time);
 		board.setMinimumSize(new Dimension(800,700));
 		
 		//The Left Layout When Game is inactive
@@ -423,7 +421,9 @@ public class Main extends JFrame implements MouseListener
     		}
     		newboardstate[fromcell.x][fromcell.y].removePiece();
     		if ((((King)(newboardstate[x][y].getpiece())).isindanger(newboardstate)==false))
+    		{
     			newlist.add(tempc);
+    		}
     	}
     	return newlist;
     }

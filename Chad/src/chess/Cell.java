@@ -7,7 +7,7 @@ import pieces.*;
 
 /**
  * This is the Cell Class. It is the token class of our GUI.
- * There are total of 144 cells that together makes up the Chess Board
+ * There are total of 144 cells that together makes up the Chad Board
  *
  */
 public class Cell extends JPanel implements Cloneable{
@@ -28,21 +28,22 @@ public class Cell extends JPanel implements Cloneable{
 		this.y=y;
 		
 		setLayout(new BorderLayout());
+		
 	 
-	 if((x+y)%2==0  && !((x==1 && (y== 7 || y==8 || y==9)) ||(x==2 && (y==6 || y==10))||(x==3 && (y==6 || y==10))||(x==4 && (y==6 || y==10))||(x==5 && (y== 7 || y==8 || y==9))||(x==6 && (y== 2 || y==3 || y==4))||(x==5 && (y== 7 || y==8 || y==9))||(x==6 && (y== 2 || y==3 || y==4))||(x==7 && (y== 1 || y==5))||(x==8 && (y== 1 || y==5))||(x==9&& (y== 1 || y==5))||(x==10 && (y== 2 || y==3 || y==4))) )
-	  setBackground(new Color(255,255,0));
+		if((x+y)%2==0  && !((x==1 && (y== 7 || y==8 || y==9)) ||(x==2 && (y==6 || y==10))||(x==3 && (y==6 || y==10))||(x==4 && (y==6 || y==10))||(x==5 && (y== 7 || y==8 || y==9))||(x==6 && (y== 2 || y==3 || y==4))||(x==5 && (y== 7 || y==8 || y==9))||(x==6 && (y== 2 || y==3 || y==4))||(x==7 && (y== 1 || y==5))||(x==8 && (y== 1 || y==5))||(x==9&& (y== 1 || y==5))||(x==10 && (y== 2 || y==3 || y==4))) )
+			setBackground(new Color(255,255,0));
 	 
-	 else if(((x==1 && (y== 7 || y==9)) ||(x==2 && (y==6 || y==10))||(x==4 && (y==6 || y==10))||(x==5 && (y== 7 || y==9))||(x==6 && (y== 2 || y==4))||(x==7 && (y== 1 || y==5)) ||(x==9 && (y== 1 || y==5))||(x==10 && (y== 2 || y==4))))
-		  setBackground(new Color(153,76,0));
+		else if(((x==1 && (y== 7 || y==9)) ||(x==2 && (y==6 || y==10))||(x==4 && (y==6 || y==10))||(x==5 && (y== 7 || y==9))||(x==6 && (y== 2 || y==4))||(x==7 && (y== 1 || y==5)) ||(x==9 && (y== 1 || y==5))||(x==10 && (y== 2 || y==4))))
+			setBackground(new Color(153,76,0));
 	 
-	 else if((x==1 && y==8 )||(x==3 && (y==6 || y==10))||(x==5 && y==8)||(x==6 && y==3)||(x==8 && (y==1 || y==5))||(x==10 && y==3))
-		  setBackground(new Color(102,51,0));
+		else if((x==1 && y==8 )||(x==3 && (y==6 || y==10))||(x==5 && y==8)||(x==6 && y==3)||(x==8 && (y==1 || y==5))||(x==10 && y==3))
+			setBackground(new Color(102,51,0));
 	 
-	 else
-	  setBackground(new Color(255,255,153));
+		else
+			setBackground(new Color(255,255,153));
 	 
-	 if(p!=null)
-		 setPiece(p);
+		if(p!=null)
+			setPiece(p);
 	}
 	
 	//A constructor that takes a cell as argument and returns a new cell will the same data but different reference
