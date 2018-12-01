@@ -83,8 +83,8 @@ public class Main extends JFrame implements MouseListener
 	br08=new Rook("BR08","Black_Rook.png",1);
 	wq=new Queen("WQ","White_Queen.png",0);
 	bq=new Queen("BQ","Black_Queen.png",1);
-	wk=new King("WK","White_King.png",0,7,3);
-	bk=new King("BK","Black_King.png",1,0,3);
+	wk=new King("WK","White_King.png",0,8,3);
+	bk=new King("BK","Black_King.png",1,3,8);
 		
 	//Setting up the board
 	Mainboard = new Main();
@@ -198,41 +198,41 @@ public class Main extends JFrame implements MouseListener
 			{	
 				P=null;
 				if(i==7&&j==2)
-					P=br01;
-				else if(i==8&&j==2)
-					P=br02;
-				else if(i==9&&j==2)
-					P=br03;
-				else if(i==7&&j==3)
-					P=br04;
-				else if(i==9&&j==3)
-					P=br05;
-				else if(i==7&&j==4)
-					P=br06;
-				else if(i==8&&j==4)
-					P=br07;
-				else if(i==9&&j==4)
-					P=br08;
-				else if(i==2&&j==7)
 					P=wr01;
-				else if(i==3&&j==7)
+				else if(i==8&&j==2)
 					P=wr02;
-				else if(i==4&&j==7)
+				else if(i==9&&j==2)
 					P=wr03;
-				else if(i==2&&j==8)
+				else if(i==7&&j==3)
 					P=wr04;
-				else if(i==4&&j==8)
+				else if(i==9&&j==3)
 					P=wr05;
-				else if(i==2&&j==9)
+				else if(i==7&&j==4)
 					P=wr06;
-				else if(i==3&&j==9)
+				else if(i==8&&j==4)
 					P=wr07;
-				else if(i==4&&j==9)
+				else if(i==9&&j==4)
 					P=wr08;
+				else if(i==2&&j==7)
+					P=br01;
+				else if(i==3&&j==7)
+					P=br02;
+				else if(i==4&&j==7)
+					P=br03;
+				else if(i==2&&j==8)
+					P=br04;
+				else if(i==4&&j==8)
+					P=br05;
+				else if(i==2&&j==9)
+					P=br06;
+				else if(i==3&&j==9)
+					P=br07;
+				else if(i==4&&j==9)
+					P=br08;
 				else if(i==8&&j==3)
-					P=bk;
-				else if(i==3&&j==8)
 					P=wk;
+				else if(i==3&&j==8)
+					P=bk;
 				cell=new Cell(i,j,P);
 				cell.addMouseListener(this);
 				board.add(cell);
